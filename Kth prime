@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int>primes;
+bool ar[1000];
+
+void sieve(){
+    int maxN = 1000;
+    ar[0]=ar[1]=true;
+    
+    for(int i=2;i*i<maxN;i++)
+    {
+        if(!ar[i]){
+            for(int j = i*i; j<=maxN;j+=i)
+            ar[j]= true;
+        }
+    }
+    
+    for(int i=2;i<1000;i++){
+        //cout<<"at "<<i<<endl;
+        if(!ar[i]){
+            
+        //cout<<"inserted "<<i<<" ";
+        primes.push_back(i);}
+    }
+    
+}
+
+int main(){
+    
+    sieve();
+    
+    int K=15;
+    cout 
+    <<"the Kth prime number is: "
+    <<primes[K-1]
+    <<endl;
+    
+    
+return 0;    
+    
+}
